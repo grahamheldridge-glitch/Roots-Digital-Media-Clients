@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Runnin' Merch Co. — Design Concepts by Roots Digital Media</title>
+<meta name="description" content="Three custom website design concepts for Runnin' Merch Company, presented by Roots Digital Media."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:     #0a0a0a;
+  --deep:   #060606;
+  --amber:  #E8820A;
+  --gold:   #F5B230;
+  --bright: #FFCC44;
+  --cream:  #FFF5DC;
+  --chrome: #8A9099;
+  --white:  #FFFFFF;
+
+  --c1-accent: #C6FF00;   /* Acid Retro lime */
+  --c2-accent: #7B2EFF;   /* Neon Performance purple */
+  --c3-accent: #E8820A;   /* Whiskey Vinyl amber */
+
+  --font-hero: 'Black Ops One', impact, sans-serif;
+  --font-ui:   'Barlow Condensed', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  cursor:none;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+
+/* GRAIN */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.03;pointer-events:none;z-index:9000;
+  animation:gr .2s steps(1) infinite;
+}
+@keyframes gr{0%{transform:translate(0,0)}50%{transform:translate(-2px,1px)}100%{transform:translate(1px,-1px)}}
+
+/* CURSOR */
+.cur{position:fixed;width:10px;height:10px;background:var(--amber);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}
+.cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,130,10,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s var(--ease),height .2s var(--ease)}
+
+/* =====================================================
+   HEADER — AGENCY BADGE
+===================================================== */
+header{
+  padding: 32px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative;
+}
+header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,transparent,var(--amber),var(--bright),var(--amber),transparent);
+}
+.agency-logo{
+  display:flex;align-items:center;gap:12px;
+}
+.agency-mark{
+  width:38px;height:38px;
+  background:var(--amber);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-hero);font-size:16px;
+  color:var(--bg);letter-spacing:.05em;
+}
+.agency-name{
+  font-family:var(--font-ui);
+  font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);
+  line-height:1.3;
+}
+.agency-name span{display:block;color:var(--amber);font-size:10px;letter-spacing:.3em}
+.header-date{
+  font-family:var(--font-ui);
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);
+}
+
+/* =====================================================
+   HERO — PRESENTATION INTRO
+===================================================== */
+#intro{
+  padding:80px 52px 60px;
+  position:relative;
+  text-align:center;
+  overflow:hidden;
+}
+.intro-glow{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%,rgba(232,130,10,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+/* Client logo */
+.client-bird{
+  width:80px;height:80px;object-fit:contain;
+  filter:brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(500%) hue-rotate(5deg) brightness(100%);
+  margin:0 auto 20px;
+  animation:birdPulse 3s ease-in-out infinite;
+}
+@keyframes birdPulse{
+  0%,100%{filter:brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(500%) hue-rotate(5deg) brightness(100%);transform:scale(1)}
+  50%{filter:brightness(0) saturate(100%) invert(65%) sepia(90%) saturate(600%) hue-rotate(5deg) brightness(130%);transform:scale(1.05)}
+}
+.for-label{
+  font-family:var(--font-ui);font-size:11px;font-weight:700;
+  letter-spacing:.35em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.for-label::before,.for-label::after{content:'';display:block;width:32px;height:1px;background:rgba(255,255,255,.15)}
+.client-name{
+  font-family:var(--font-hero);
+  font-size:clamp(42px,7vw,96px);
+  letter-spacing:.04em;text-transform:uppercase;
+  line-height:.88;
+  color:var(--cream);
+  margin-bottom:14px;
+  text-shadow:0 0 60px rgba(232,130,10,.15);
+}
+.client-name em{
+  font-style:normal;color:var(--amber);
+  text-shadow:0 0 50px rgba(232,130,10,.4);
+}
+.presentation-sub{
+  font-family:var(--font-ui);
+  font-size:15px;font-weight:500;letter-spacing:.08em;
+  color:rgba(255,255,255,.3);text-transform:uppercase;
+  margin-bottom:0;
+}
+
+/* =====================================================
+   CONCEPT COUNT BAR
+===================================================== */
+.count-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;
+  margin:48px 52px 0;
+  border:1px solid rgba(255,255,255,.07);
+  border-left:none;border-right:none;
+  overflow:hidden;
+}
+.count-item{
+  flex:1;padding:20px 24px;
+  display:flex;align-items:center;gap:14px;
+  border-right:1px solid rgba(255,255,255,.07);
+  transition:background .3s;
+  cursor:none;
+}
+.count-item:last-child{border-right:none}
+.count-item:hover{background:rgba(255,255,255,.025)}
+.count-num{
+  font-family:var(--font-hero);
+  font-size:32px;letter-spacing:.02em;
+  line-height:1;
+}
+.ci-1 .count-num{color:var(--c1-accent);text-shadow:0 0 20px rgba(198,255,0,.3)}
+.ci-2 .count-num{color:var(--c2-accent);text-shadow:0 0 20px rgba(123,46,255,.3)}
+.ci-3 .count-num{color:var(--c3-accent);text-shadow:0 0 20px rgba(232,130,10,.3)}
+.count-label{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);line-height:1.4}
+.count-label span{display:block;font-size:13px;font-weight:800;color:rgba(255,255,255,.7);letter-spacing:.05em;text-transform:none;margin-top:2px}
+
+/* =====================================================
+   CONCEPT CARDS
+===================================================== */
+#concepts{
+  padding:64px 52px 80px;
+  display:flex;flex-direction:column;
+  gap:3px;
+}
+
+.concept-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:480px;
+  overflow:hidden;
+  cursor:none;
+  transition:transform .4s var(--ease);
+}
+.concept-card:hover{transform:scale(1.005);z-index:2}
+
+/* Left — info panel */
+.cc-info{
+  padding:60px 52px;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  z-index:1;
+}
+/* Right — preview panel */
+.cc-preview{
+  position:relative;overflow:hidden;
+}
+.cc-preview iframe{
+  width:200%;height:200%;
+  border:none;
+  transform:scale(.5);
+  transform-origin:top left;
+  pointer-events:none;
+  border-radius:0;
+}
+.cc-preview-overlay{
+  position:absolute;inset:0;z-index:2;
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  padding:24px;
+}
+
+/* Card color themes */
+.c1 .cc-info{background:#0d0d0d}
+.c1 .cc-preview{background:#0f0f0f}
+.c1::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--c1-accent);box-shadow:0 0 20px rgba(198,255,0,.4)}
+
+.c2 .cc-info{background:#09090f}
+.c2 .cc-preview{background:#070710}
+.c2::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--c2-accent);box-shadow:0 0 20px rgba(123,46,255,.4)}
+
+.c3 .cc-info{background:#0d0b05}
+.c3 .cc-preview{background:#0a0905}
+.c3::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--c3-accent);box-shadow:0 0 20px rgba(232,130,10,.4)}
+
+/* Card number */
+.cc-num{
+  font-family:var(--font-hero);
+  font-size:clamp(80px,10vw,140px);
+  line-height:1;letter-spacing:.02em;
+  color:transparent;
+  position:absolute;top:-10px;right:40px;
+  pointer-events:none;user-select:none;z-index:0;
+  transition:-webkit-text-stroke-color .4s;
+}
+.c1 .cc-num{-webkit-text-stroke:1px rgba(198,255,0,.05)}
+.c2 .cc-num{-webkit-text-stroke:1px rgba(123,46,255,.05)}
+.c3 .cc-num{-webkit-text-stroke:1px rgba(232,130,10,.06)}
+.concept-card:hover .cc-num{opacity:.6}
+.c1:hover .cc-num{-webkit-text-stroke-color:rgba(198,255,0,.12)}
+.c2:hover .cc-num{-webkit-text-stroke-color:rgba(123,46,255,.12)}
+.c3:hover .cc-num{-webkit-text-stroke-color:rgba(232,130,10,.14)}
+
+/* Card content */
+.cc-top{position:relative;z-index:1}
+.cc-direction-tag{
+  font-family:var(--font-ui);
+  font-size:10px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;
+  padding:5px 14px;margin-bottom:18px;display:inline-block;
+}
+.c1 .cc-direction-tag{background:var(--c1-accent);color:#0d0d0d}
+.c2 .cc-direction-tag{background:var(--c2-accent);color:var(--white)}
+.c3 .cc-direction-tag{background:var(--c3-accent);color:#0d0b05}
+
+.cc-title{
+  font-family:var(--font-hero);
+  font-size:clamp(36px,4vw,58px);
+  letter-spacing:.04em;text-transform:uppercase;
+  line-height:.9;color:var(--white);
+  margin-bottom:10px;
+  text-shadow:0 3px 0 rgba(0,0,0,.6);
+}
+.c1 .cc-title{color:var(--cream)}
+.c2 .cc-title{color:var(--white)}
+.c3 .cc-title{color:var(--cream)}
+
+.cc-tagline{
+  font-family:var(--font-ui);
+  font-size:14px;font-weight:600;letter-spacing:.08em;
+  color:rgba(255,255,255,.35);text-transform:uppercase;
+  margin-bottom:28px;
+}
+
+.cc-desc{
+  font-size:14px;line-height:1.75;
+  color:rgba(255,255,255,.45);
+  max-width:380px;margin-bottom:36px;
+}
+
+/* Vibe tags */
+.cc-vibes{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;
+}
+.vibe{
+  font-family:var(--font-ui);
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:5px 12px;
+  border:1px solid;
+  border-radius:2px;
+}
+.c1 .vibe{border-color:rgba(198,255,0,.2);color:rgba(198,255,0,.6)}
+.c2 .vibe{border-color:rgba(123,46,255,.25);color:rgba(180,140,255,.7)}
+.c3 .vibe{border-color:rgba(232,130,10,.22);color:rgba(232,130,10,.7)}
+
+/* Best for */
+.cc-best{
+  font-family:var(--font-ui);font-size:11px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.c1 .cc-best{color:rgba(198,255,0,.5)}
+.c2 .cc-best{color:rgba(123,46,255,.6)}
+.c3 .cc-best{color:rgba(232,130,10,.6)}
+.cc-best-desc{font-size:12px;color:rgba(255,255,255,.3);line-height:1.6;max-width:340px}
+
+/* CTA button */
+.cc-btn{
+  font-family:var(--font-hero);
+  font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  padding:15px 40px;
+  display:inline-flex;align-items:center;gap:12px;
+  position:relative;overflow:hidden;
+  cursor:none;border:2px solid;
+  transition:transform .2s var(--ease),box-shadow .2s;
+}
+.cc-btn::before{content:'';position:absolute;inset:0;transform:translateX(-101%);transition:transform .3s ease}
+.cc-btn:hover::before{transform:translateX(0)}
+.cc-btn:hover{transform:translateY(-2px)}
+.cc-btn span{position:relative;z-index:1}
+
+.c1 .cc-btn{background:var(--c1-accent);color:#0d0d0d;border-color:var(--c1-accent);box-shadow:0 4px 30px rgba(198,255,0,.25),4px 4px 0 rgba(0,0,0,.5)}
+.c1 .cc-btn::before{background:rgba(255,255,255,.15)}
+.c1 .cc-btn:hover{box-shadow:0 8px 40px rgba(198,255,0,.4),4px 4px 0 rgba(0,0,0,.5)}
+
+.c2 .cc-btn{background:var(--c2-accent);color:var(--white);border-color:var(--c2-accent);box-shadow:0 4px 30px rgba(123,46,255,.3),4px 4px 0 rgba(0,0,0,.5)}
+.c2 .cc-btn::before{background:rgba(255,255,255,.12)}
+.c2 .cc-btn:hover{box-shadow:0 8px 40px rgba(123,46,255,.5),4px 4px 0 rgba(0,0,0,.5)}
+
+.c3 .cc-btn{background:var(--c3-accent);color:#0d0b05;border-color:var(--c3-accent);box-shadow:0 4px 30px rgba(232,130,10,.3),4px 4px 0 rgba(0,0,0,.5)}
+.c3 .cc-btn::before{background:rgba(255,255,255,.15)}
+.c3 .cc-btn:hover{box-shadow:0 8px 40px rgba(232,130,10,.5),4px 4px 0 rgba(0,0,0,.5)}
+
+/* Preview panel — mock browser frame */
+.browser-bar{
+  position:absolute;top:0;left:0;right:0;z-index:3;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(8px);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.browser-dot{width:9px;height:9px;border-radius:50%}
+.bd-r{background:#ff5f57}.bd-y{background:#febc2e}.bd-g{background:#28c840}
+.browser-url{
+  flex:1;margin-left:8px;
+  background:rgba(255,255,255,.06);
+  border-radius:4px;padding:4px 10px;
+  font-family:var(--font-body);font-size:10px;
+  color:rgba(255,255,255,.3);letter-spacing:.02em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.preview-placeholder{
+  position:absolute;top:40px;left:0;right:0;bottom:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:16px;
+  background:linear-gradient(160deg,rgba(255,255,255,.02) 0%,transparent 100%);
+}
+.preview-placeholder-icon{
+  font-family:var(--font-hero);
+  font-size:clamp(40px,6vw,80px);
+  letter-spacing:.02em;text-transform:uppercase;
+  color:transparent;text-align:center;
+}
+.c1 .preview-placeholder-icon{-webkit-text-stroke:1px rgba(198,255,0,.15)}
+.c2 .preview-placeholder-icon{-webkit-text-stroke:1px rgba(123,46,255,.15)}
+.c3 .preview-placeholder-icon{-webkit-text-stroke:1px rgba(232,130,10,.15)}
+.preview-placeholder-label{
+  font-family:var(--font-ui);font-size:10px;font-weight:700;
+  letter-spacing:.3em;text-transform:uppercase;
+}
+.c1 .preview-placeholder-label{color:rgba(198,255,0,.3)}
+.c2 .preview-placeholder-label{color:rgba(123,46,255,.35)}
+.c3 .preview-placeholder-label{color:rgba(232,130,10,.35)}
+
+/* Live link overlay button */
+.preview-live-btn{
+  position:absolute;bottom:24px;right:24px;z-index:4;
+  font-family:var(--font-ui);font-size:10px;font-weight:800;
+  letter-spacing:.25em;text-transform:uppercase;
+  padding:9px 18px;
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid;cursor:none;
+  transition:all .2s;
+}
+.c1 .preview-live-btn{background:rgba(198,255,0,.1);border-color:rgba(198,255,0,.3);color:var(--c1-accent)}
+.c1 .preview-live-btn:hover{background:var(--c1-accent);color:#0d0d0d;border-color:var(--c1-accent)}
+.c2 .preview-live-btn{background:rgba(123,46,255,.1);border-color:rgba(123,46,255,.3);color:rgba(180,140,255,.9)}
+.c2 .preview-live-btn:hover{background:var(--c2-accent);color:var(--white);border-color:var(--c2-accent)}
+.c3 .preview-live-btn{background:rgba(232,130,10,.1);border-color:rgba(232,130,10,.3);color:var(--c3-accent)}
+.c3 .preview-live-btn:hover{background:var(--c3-accent);color:#0d0b05;border-color:var(--c3-accent)}
+
+/* =====================================================
+   COMPARISON TABLE
+===================================================== */
+#compare{
+  margin:0 52px 80px;
+  border:1px solid rgba(255,255,255,.06);
+  overflow:hidden;
+}
+.compare-header{
+  padding:28px 36px;
+  background:rgba(255,255,255,.02);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.compare-title{
+  font-family:var(--font-hero);
+  font-size:18px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);
+}
+.compare-grid{
+  display:grid;
+  grid-template-columns:180px repeat(3,1fr);
+}
+.cg-head{
+  padding:18px 24px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  border-right:1px solid rgba(255,255,255,.06);
+  font-family:var(--font-ui);font-size:11px;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;
+}
+.cg-head:last-child{border-right:none}
+.cg-head.h1a{color:rgba(198,255,0,.8)}
+.cg-head.h2a{color:rgba(123,46,255,.9)}
+.cg-head.h3a{color:rgba(232,130,10,.9)}
+.cg-row{display:contents}
+.cg-label{
+  padding:16px 24px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  border-right:1px solid rgba(255,255,255,.04);
+  font-family:var(--font-ui);font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);
+  display:flex;align-items:center;
+}
+.cg-cell{
+  padding:16px 24px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  border-right:1px solid rgba(255,255,255,.04);
+  font-size:12px;color:rgba(255,255,255,.5);
+  line-height:1.5;
+  display:flex;align-items:center;
+}
+.cg-cell:last-child{border-right:none}
+.cg-cell strong{font-weight:600;display:block;margin-bottom:2px}
+.cg-cell .yes{color:var(--bright);font-family:var(--font-ui);font-weight:800;font-size:11px;letter-spacing:.1em}
+.cg-cell .no{color:rgba(255,255,255,.2);font-family:var(--font-ui);font-weight:700;font-size:11px}
+.cg-row:last-child .cg-label,.cg-row:last-child .cg-cell{border-bottom:none}
+
+/* =====================================================
+   FOOTER — AGENCY SIGN OFF
+===================================================== */
+footer{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:40px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+}
+footer::before{content:'';position:absolute;left:0;right:0;height:2px;bottom:0;background:transparent}
+.foot-agency{
+  font-family:var(--font-ui);font-size:11px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);
+}
+.foot-agency strong{color:var(--amber)}
+.foot-note{
+  font-size:11px;color:rgba(255,255,255,.15);
+  text-align:center;max-width:400px;line-height:1.6;
+}
+.foot-contact{
+  font-family:var(--font-ui);font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.2);text-align:right;
+}
+.foot-contact a{color:var(--amber);transition:color .2s}
+.foot-contact a:hover{color:var(--bright)}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rev.in{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  header{padding:24px}
+  #intro{padding:56px 24px 40px}
+  .count-bar{margin:36px 24px 0}
+  #concepts{padding:44px 24px 60px}
+  .concept-card{grid-template-columns:1fr}
+  .cc-preview{min-height:260px}
+  #compare{margin:0 24px 60px}
+  .compare-grid{grid-template-columns:120px repeat(3,1fr)}
+  footer{padding:32px 24px}
+}
+@media(max-width:640px){
+  .count-bar{flex-direction:column}
+  .count-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
+  .count-item:last-child{border-bottom:none}
+  .compare-grid{grid-template-columns:100px repeat(3,1fr)}
+  .cg-label,.cg-cell,.cg-head{padding:12px 10px;font-size:10px}
+  footer{flex-direction:column;text-align:center}
+  .foot-contact{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="crng"></div>
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<header>
+  <div class="agency-logo">
+    <div class="agency-mark">RD</div>
+    <div class="agency-name">
+      Roots Digital Media
+      <span>Design Concepts Presentation</span>
+    </div>
+  </div>
+  <div class="header-date" id="hdate"></div>
+</header>
+
+<!-- ================================================================
+     INTRO
+================================================================ -->
+<section id="intro">
+  <div class="intro-glow"></div>
+  <img
+    src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/dWxBrgpor9CnOkVZ/bird-favicon-d957aq4RXLF4bkXR.png"
+    alt="Runnin' Merch Road Runner"
+    class="client-bird"
+  />
+  <div class="for-label">Website Redesign Proposal For</div>
+  <h1 class="client-name">RUNNIN'<br/><em>MERCH CO.</em></h1>
+  <p class="presentation-sub">3 Creative Directions — Select Your Vision</p>
+</section>
+
+<!-- COUNT BAR -->
+<div class="count-bar">
+  <div class="count-item ci-1 rev">
+    <div class="count-num">01</div>
+    <div class="count-label">Direction One<span>Acid Retro</span></div>
+  </div>
+  <div class="count-item ci-2 rev rd1">
+    <div class="count-num">02</div>
+    <div class="count-label">Direction Two<span>Neon Performance</span></div>
+  </div>
+  <div class="count-item ci-3 rev rd2">
+    <div class="count-num">03</div>
+    <div class="count-label">Direction Three<span>Whiskey Vinyl ★</span></div>
+  </div>
+</div>
+
+<!-- ================================================================
+     CONCEPT CARDS
+================================================================ -->
+<section id="concepts">
+
+  <!-- ── CONCEPT 1: ACID RETRO ── -->
+  <div class="concept-card c1 rev">
+    <div class="cc-num" aria-hidden="true">01</div>
+    <div class="cc-info">
+      <div class="cc-top">
+        <span class="cc-direction-tag">Direction 01</span>
+        <h2 class="cc-title">ACID<br/>RETRO</h2>
+        <p class="cc-tagline">Underground · Gritty · Cultural · Rebellious</p>
+        <p class="cc-desc">
+          Concert poster maximalism at full volume. Toxic lime on washed black. Oversized type bleeding off the screen. Sticker-slapped UI, grain textures, marquee chaos. This is the aesthetic that says <em style="font-style:normal;color:rgba(198,255,0,.8)">"we understand culture."</em>
+        </p>
+        <div class="cc-vibes">
+          <span class="vibe">Toxic Lime</span>
+          <span class="vibe">Grain Texture</span>
+          <span class="vibe">Poster Chaos</span>
+          <span class="vibe">Sticker Energy</span>
+          <span class="vibe">Glitch Effects</span>
+        </div>
+        <p class="cc-best">Best For</p>
+        <p class="cc-best-desc">Indie artists, skate & streetwear brands, underground creators, cultural edge positioning</p>
+      </div>
+      <a href="v2-acid-retro.html" class="cc-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="cc-preview">
+      <div class="browser-bar">
+        <div class="browser-dot bd-r"></div>
+        <div class="browser-dot bd-y"></div>
+        <div class="browser-dot bd-g"></div>
+        <div class="browser-url">rootsdigitalmedia.github.io/runninmerch/acid-retro</div>
+      </div>
+      <div class="preview-placeholder">
+        <div class="preview-placeholder-icon">ACID<br/>RETRO</div>
+        <div class="preview-placeholder-label">Toxic Lime / Washed Black</div>
+      </div>
+      <div class="cc-preview-overlay">
+        <a href="v2-acid-retro.html" class="preview-live-btn" target="_blank">
+          <span>↗ OPEN DEMO</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONCEPT 2: NEON PERFORMANCE ── -->
+  <div class="concept-card c2 rev">
+    <div class="cc-num" aria-hidden="true">02</div>
+    <div class="cc-info">
+      <div class="cc-top">
+        <span class="cc-direction-tag">Direction 02</span>
+        <h2 class="cc-title">NEON<br/>PERFORMANCE</h2>
+        <p class="cc-tagline">Cinematic · Premium · Futuristic · Stadium Energy</p>
+        <p class="cc-desc">
+          Electric purple meets stadium lights. Sweeping light cones, glowing buttons, animated counters, cinematic depth. This feels like stepping backstage at a major tour. The site that says <em style="font-style:normal;color:rgba(180,140,255,.9)">"big artist energy."</em>
+        </p>
+        <div class="cc-vibes">
+          <span class="vibe">Electric Purple</span>
+          <span class="vibe">Stage Lights</span>
+          <span class="vibe">Glow Effects</span>
+          <span class="vibe">Live Metrics</span>
+          <span class="vibe">Cinematic</span>
+        </div>
+        <p class="cc-best">Best For</p>
+        <p class="cc-best-desc">Musicians with real budgets, athletes, brands wanting premium scale, nationally competitive positioning</p>
+      </div>
+      <a href="runninmerch-neon-performance.html" class="cc-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="cc-preview">
+      <div class="browser-bar">
+        <div class="browser-dot bd-r"></div>
+        <div class="browser-dot bd-y"></div>
+        <div class="browser-dot bd-g"></div>
+        <div class="browser-url">rootsdigitalmedia.github.io/runninmerch/neon-performance</div>
+      </div>
+      <div class="preview-placeholder">
+        <div class="preview-placeholder-icon">NEON<br/>PERF.</div>
+        <div class="preview-placeholder-label">Electric Purple / Deep Black</div>
+      </div>
+      <div class="cc-preview-overlay">
+        <a href="runninmerch-neon-performance.html" class="preview-live-btn" target="_blank">
+          <span>↗ OPEN DEMO</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONCEPT 3: WHISKEY VINYL ── -->
+  <div class="concept-card c3 rev">
+    <div class="cc-num" aria-hidden="true">03</div>
+    <div class="cc-info">
+      <div class="cc-top">
+        <span class="cc-direction-tag">Direction 03 — ★ Recommended</span>
+        <h2 class="cc-title">WHISKEY<br/>VINYL</h2>
+        <p class="cc-tagline">1970s Rock · Bold · Loud · Warm · Authentic</p>
+        <p class="cc-desc">
+          Warm amber on deep ink black. Black Ops One bold type that commands a room. Spinning vinyl records, halftone textures, tour poster energy. Built around the Road Runner — his symbol. This one is <em style="font-style:normal;color:var(--amber)">built for him.</em>
+        </p>
+        <div class="cc-vibes">
+          <span class="vibe">Amber & Rust</span>
+          <span class="vibe">Bold Type</span>
+          <span class="vibe">Road Runner</span>
+          <span class="vibe">Vinyl Record</span>
+          <span class="vibe">Tour Poster</span>
+        </div>
+        <p class="cc-best">Best For</p>
+        <p class="cc-best-desc">Bold personality brands, music & culture, authentic storytelling, regional pride, long-term brand identity</p>
+      </div>
+      <a href="whiskey-vinyl-v2-bold.html" class="cc-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="cc-preview">
+      <div class="browser-bar">
+        <div class="browser-dot bd-r"></div>
+        <div class="browser-dot bd-y"></div>
+        <div class="browser-dot bd-g"></div>
+        <div class="browser-url">rootsdigitalmedia.github.io/runninmerch/whiskey-vinyl</div>
+      </div>
+      <div class="preview-placeholder">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/dWxBrgpor9CnOkVZ/bird-favicon-d957aq4RXLF4bkXR.png"
+          alt=""
+          style="width:100px;height:100px;object-fit:contain;filter:brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(500%) hue-rotate(5deg) brightness(100%);opacity:.4;"
+          aria-hidden="true"
+        />
+        <div class="preview-placeholder-label">Amber / Deep Ink Black</div>
+      </div>
+      <div class="cc-preview-overlay">
+        <a href="whiskey-vinyl-v2-bold.html" class="preview-live-btn" target="_blank">
+          <span>↗ OPEN DEMO</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================================================================
+     COMPARISON TABLE
+================================================================ -->
+<div id="compare" class="rev">
+  <div class="compare-header">
+    <div class="compare-title">DIRECTION COMPARISON</div>
+  </div>
+  <div class="compare-grid">
+
+    <!-- Headers -->
+    <div class="cg-head" style="color:rgba(255,255,255,.2)"></div>
+    <div class="cg-head h1a">Acid Retro</div>
+    <div class="cg-head h2a">Neon Performance</div>
+    <div class="cg-head h3a">Whiskey Vinyl ★</div>
+
+    <!-- Rows -->
+    <div class="cg-row">
+      <div class="cg-label">Personality Fit</div>
+      <div class="cg-cell">Underground / Edgy</div>
+      <div class="cg-cell">Premium / Scalable</div>
+      <div class="cg-cell"><strong>Bold / Authentic</strong></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Color Energy</div>
+      <div class="cg-cell">Toxic Lime + Black</div>
+      <div class="cg-cell">Purple + Dark</div>
+      <div class="cg-cell"><strong>Amber + Deep Ink</strong></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Uses Logo</div>
+      <div class="cg-cell"><span class="no">✕ Not Yet</span></div>
+      <div class="cg-cell"><span class="no">✕ Not Yet</span></div>
+      <div class="cg-cell"><span class="yes">✓ Road Runner</span></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Typography</div>
+      <div class="cg-cell">Anton / Poster</div>
+      <div class="cg-cell">Space Grotesk / UI</div>
+      <div class="cg-cell"><strong>Black Ops One / Slab</strong></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Motion Style</div>
+      <div class="cg-cell">Glitch / Sticker</div>
+      <div class="cg-cell">Cinematic / Glow</div>
+      <div class="cg-cell"><strong>Warm / Analog</strong></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Audience</div>
+      <div class="cg-cell">Indie / Alt</div>
+      <div class="cg-cell">Major Artists</div>
+      <div class="cg-cell"><strong>All — Culture First</strong></div>
+    </div>
+    <div class="cg-row">
+      <div class="cg-label">Memorability</div>
+      <div class="cg-cell">High</div>
+      <div class="cg-cell">Very High</div>
+      <div class="cg-cell"><strong>★ Highest</strong></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer>
+  <div class="foot-agency">Prepared by <strong>Roots Digital Media</strong></div>
+  <div class="foot-note">These are interactive design concepts. All demos are fully responsive. Select a direction and we move into development.</div>
+  <div class="foot-contact">
+    Questions? Let's talk.<br/>
+    <a href="mailto:hello@rootsdigitalmedia.com">hello@rootsdigitalmedia.com</a>
+  </div>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),crng=document.getElementById('crng');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(loop)})();
+
+// DATE
+const d=new Date();
+document.getElementById('hdate').textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+
+// REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.rev').forEach(r=>obs.observe(r));
+
+// Card hover cursor grow
+document.querySelectorAll('.concept-card,.cc-btn,.preview-live-btn,.count-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';crng.style.width='52px';crng.style.height='52px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';crng.style.width='36px';crng.style.height='36px'});
+});
+</script>
+</body>
+</html>
