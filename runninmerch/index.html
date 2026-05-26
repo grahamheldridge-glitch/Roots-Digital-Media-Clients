@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Runnin' Merch Co. — Design Concepts by Roots Digital Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0a0a;--deep:#060606;--amber:#E8820A;--gold:#F5B230;--bright:#FFCC44;--cream:#FFF5DC;--chrome:#8A9099;--c1:#C6FF00;--c2:#7B2EFF;--c3:#E8820A;--c4:#FFD060;--font-hero:'Black Ops One',impact,sans-serif;--font-ui:'Barlow Condensed',sans-serif;--font-body:'DM Sans',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--font-body);overflow-x:hidden;cursor:none;min-height:100vh}
+a{color:inherit;text-decoration:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.028;pointer-events:none;z-index:9000;animation:gr .2s steps(1) infinite}
+@keyframes gr{0%{transform:translate(0,0)}50%{transform:translate(-2px,1px)}100%{transform:translate(1px,-1px)}}
+.cur{position:fixed;width:10px;height:10px;background:var(--amber);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}
+.cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,130,10,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s var(--ease),height .2s var(--ease)}
+
+/* HEADER */
+header{padding:28px 52px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);position:relative}
+header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,var(--amber),var(--bright),var(--amber),transparent)}
+.agency{display:flex;align-items:center;gap:12px}
+.agency-mark{width:40px;height:40px;background:var(--amber);display:flex;align-items:center;justify-content:center;font-family:var(--font-hero);font-size:15px;color:var(--bg)}
+.agency-name{font-family:var(--font-ui);font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,245,220,.55);line-height:1.3}
+.agency-name span{display:block;color:var(--amber);font-size:10px;letter-spacing:.28em}
+.header-date{font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18)}
+
+/* INTRO */
+#intro{padding:72px 52px 52px;text-align:center;position:relative;overflow:hidden}
+.intro-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(232,130,10,.055) 0%,transparent 70%);pointer-events:none}
+.client-bird{width:76px;height:76px;object-fit:contain;margin:0 auto 18px;filter:brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(500%) hue-rotate(5deg) brightness(105%);animation:bPulse 3s ease-in-out infinite}
+@keyframes bPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.for-label{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:12px}
+.for-label::before,.for-label::after{content:'';display:block;width:32px;height:1px;background:rgba(255,255,255,.12)}
+.client-name{font-family:var(--font-hero);font-size:clamp(40px,7vw,90px);letter-spacing:.04em;text-transform:uppercase;line-height:.88;color:var(--cream);margin-bottom:12px}
+.client-name em{font-style:normal;color:var(--amber);text-shadow:0 0 40px rgba(232,130,10,.35)}
+.pres-sub{font-family:var(--font-ui);font-size:15px;font-weight:500;letter-spacing:.08em;color:rgba(255,255,255,.25);text-transform:uppercase}
+
+/* COUNT BAR */
+.count-bar{display:flex;margin:44px 52px 0;border:1px solid rgba(255,255,255,.06);border-left:none;border-right:none;overflow:hidden}
+.ci{flex:1;padding:18px 22px;display:flex;align-items:center;gap:14px;border-right:1px solid rgba(255,255,255,.06);transition:background .3s;cursor:none}
+.ci:last-child{border-right:none}
+.ci:hover{background:rgba(255,255,255,.022)}
+.ci-n{font-family:var(--font-hero);font-size:28px;letter-spacing:.02em;line-height:1}
+.ci1 .ci-n{color:var(--c1);text-shadow:0 0 18px rgba(198,255,0,.3)}
+.ci2 .ci-n{color:var(--c2);text-shadow:0 0 18px rgba(123,46,255,.3)}
+.ci3 .ci-n{color:var(--c3);text-shadow:0 0 18px rgba(232,130,10,.3)}
+.ci4 .ci-n{color:var(--c4);text-shadow:0 0 18px rgba(255,208,96,.3)}
+.ci-l{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);line-height:1.4}
+.ci-l span{display:block;font-size:12px;font-weight:800;color:rgba(255,255,255,.65);letter-spacing:.04em;text-transform:none;margin-top:2px}
+.new-badge{font-family:var(--font-ui);font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;background:var(--bright);color:var(--bg);padding:2px 7px;vertical-align:middle}
+
+/* CARDS */
+#concepts{padding:56px 52px 72px;display:flex;flex-direction:column;gap:3px}
+.card{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:460px;overflow:hidden;cursor:none;transition:transform .4s var(--ease)}
+.card:hover{transform:scale(1.004);z-index:2}
+.card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;z-index:1}
+.c1-card::before{background:var(--c1);box-shadow:0 0 20px rgba(198,255,0,.35)}
+.c2-card::before{background:var(--c2);box-shadow:0 0 20px rgba(123,46,255,.35)}
+.c3-card::before{background:var(--c3);box-shadow:0 0 20px rgba(232,130,10,.35)}
+.c4-card::before{background:var(--c4);box-shadow:0 0 20px rgba(255,208,96,.35)}
+.card-info{padding:52px 48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.c1-card .card-info{background:#0d0d0d}
+.c2-card .card-info{background:#09090f}
+.c3-card .card-info{background:#0d0b05}
+.c4-card .card-info{background:#0e0c04}
+.card-ghost{position:absolute;top:-15px;right:36px;font-family:var(--font-hero);font-size:clamp(80px,10vw,140px);letter-spacing:.02em;line-height:1;color:transparent;pointer-events:none;user-select:none;transition:-webkit-text-stroke-color .4s}
+.c1-card .card-ghost{-webkit-text-stroke:1px rgba(198,255,0,.04)}.c2-card .card-ghost{-webkit-text-stroke:1px rgba(123,46,255,.04)}.c3-card .card-ghost{-webkit-text-stroke:1px rgba(232,130,10,.05)}.c4-card .card-ghost{-webkit-text-stroke:1px rgba(255,208,96,.05)}
+.c1-card:hover .card-ghost{-webkit-text-stroke-color:rgba(198,255,0,.11)}.c2-card:hover .card-ghost{-webkit-text-stroke-color:rgba(123,46,255,.11)}.c3-card:hover .card-ghost{-webkit-text-stroke-color:rgba(232,130,10,.13)}.c4-card:hover .card-ghost{-webkit-text-stroke-color:rgba(255,208,96,.13)}
+.card-tag{font-family:var(--font-ui);font-size:10px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;padding:5px 14px;margin-bottom:16px;display:inline-block}
+.c1-card .card-tag{background:var(--c1);color:#0d0d0d}.c2-card .card-tag{background:var(--c2);color:#fff}.c3-card .card-tag{background:var(--c3);color:#0d0b05}.c4-card .card-tag{background:var(--c4);color:#0e0c04}
+.card-title{font-family:var(--font-hero);font-size:clamp(32px,4vw,54px);letter-spacing:.04em;text-transform:uppercase;line-height:.88;color:var(--cream);margin-bottom:8px;text-shadow:0 3px 0 rgba(0,0,0,.5)}
+.card-tagline{font-family:var(--font-ui);font-size:13px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:20px}
+.card-desc{font-size:13px;line-height:1.75;color:rgba(255,255,255,.42);max-width:370px;margin-bottom:24px}
+.vibes{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.vibe{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 11px;border:1px solid;border-radius:2px}
+.c1-card .vibe{border-color:rgba(198,255,0,.18);color:rgba(198,255,0,.55)}.c2-card .vibe{border-color:rgba(123,46,255,.22);color:rgba(180,140,255,.65)}.c3-card .vibe{border-color:rgba(232,130,10,.2);color:rgba(232,130,10,.65)}.c4-card .vibe{border-color:rgba(255,208,96,.2);color:rgba(255,208,96,.65)}
+.card-best-label{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:5px}
+.c1-card .card-best-label{color:rgba(198,255,0,.45)}.c2-card .card-best-label{color:rgba(123,46,255,.55)}.c3-card .card-best-label{color:rgba(232,130,10,.55)}.c4-card .card-best-label{color:rgba(255,208,96,.55)}
+.card-best{font-size:11px;color:rgba(255,255,255,.28);line-height:1.6;max-width:320px;margin-bottom:28px}
+.demo-btn{font-family:var(--font-hero);font-size:14px;letter-spacing:.1em;text-transform:uppercase;padding:14px 38px;display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden;cursor:none;border:2px solid;transition:transform .2s var(--ease),box-shadow .2s}
+.demo-btn::before{content:'';position:absolute;inset:0;transform:translateX(-101%);transition:transform .3s ease}
+.demo-btn:hover::before{transform:translateX(0)}.demo-btn:hover{transform:translateY(-2px)}
+.demo-btn span{position:relative;z-index:1}
+.c1-card .demo-btn{background:var(--c1);color:#0d0d0d;border-color:var(--c1);box-shadow:0 4px 28px rgba(198,255,0,.2),3px 3px 0 rgba(0,0,0,.4)}.c1-card .demo-btn::before{background:rgba(255,255,255,.15)}
+.c2-card .demo-btn{background:var(--c2);color:#fff;border-color:var(--c2);box-shadow:0 4px 28px rgba(123,46,255,.25),3px 3px 0 rgba(0,0,0,.4)}.c2-card .demo-btn::before{background:rgba(255,255,255,.1)}
+.c3-card .demo-btn{background:var(--c3);color:#0d0b05;border-color:var(--c3);box-shadow:0 4px 28px rgba(232,130,10,.25),3px 3px 0 rgba(0,0,0,.4)}.c3-card .demo-btn::before{background:rgba(255,255,255,.15)}
+.c4-card .demo-btn{background:var(--c4);color:#0e0c04;border-color:var(--c4);box-shadow:0 4px 28px rgba(255,208,96,.22),3px 3px 0 rgba(0,0,0,.4)}.c4-card .demo-btn::before{background:rgba(255,255,255,.15)}
+
+/* PREVIEW */
+.card-preview{position:relative;overflow:hidden}
+.c1-card .card-preview{background:#0f0f0f}.c2-card .card-preview{background:#070710}.c3-card .card-preview{background:#0a0905}.c4-card .card-preview{background:#0c0a03}
+.browser-bar{position:absolute;top:0;left:0;right:0;z-index:3;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);padding:10px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.05)}
+.bd{width:9px;height:9px;border-radius:50%}.bd-r{background:#ff5f57}.bd-y{background:#febc2e}.bd-g{background:#28c840}
+.browser-url{flex:1;margin-left:8px;background:rgba(255,255,255,.05);border-radius:4px;padding:4px 10px;font-family:var(--font-body);font-size:10px;color:rgba(255,255,255,.25);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.preview-body{position:absolute;top:40px;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.preview-road{position:absolute;inset:40px 0 0;background:url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop/dWxBrgpor9CnOkVZ/img_0039-YBgekVjJNETr9NK5.jpg') center/cover no-repeat;opacity:.14}
+.preview-road-overlay{position:absolute;inset:40px 0 0;background:linear-gradient(160deg,rgba(232,130,10,.1),transparent)}
+.preview-big-text{font-family:var(--font-hero);font-size:clamp(32px,5vw,64px);letter-spacing:.04em;text-transform:uppercase;color:transparent;text-align:center;pointer-events:none;user-select:none;line-height:1}
+.c1-card .preview-big-text{-webkit-text-stroke:1px rgba(198,255,0,.12)}.c2-card .preview-big-text{-webkit-text-stroke:1px rgba(123,46,255,.14)}.c3-card .preview-big-text{-webkit-text-stroke:1px rgba(232,130,10,.14)}.c4-card .preview-big-text{-webkit-text-stroke:1px rgba(255,208,96,.18)}
+.preview-bird{width:68px;height:68px;object-fit:contain;opacity:.25;filter:brightness(0) saturate(100%) invert(58%) sepia(90%) saturate(500%) hue-rotate(5deg) brightness(110%)}
+.preview-lbl{font-family:var(--font-ui);font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+.c1-card .preview-lbl{color:rgba(198,255,0,.28)}.c2-card .preview-lbl{color:rgba(123,46,255,.32)}.c3-card .preview-lbl{color:rgba(232,130,10,.32)}.c4-card .preview-lbl{color:rgba(255,208,96,.35)}
+.open-btn{position:absolute;bottom:22px;right:22px;z-index:4;font-family:var(--font-ui);font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:8px 16px;border:1px solid;cursor:none;transition:all .2s}
+.c1-card .open-btn{background:rgba(198,255,0,.08);border-color:rgba(198,255,0,.25);color:var(--c1)}.c1-card .open-btn:hover{background:var(--c1);color:#0d0d0d}
+.c2-card .open-btn{background:rgba(123,46,255,.1);border-color:rgba(123,46,255,.28);color:rgba(180,140,255,.9)}.c2-card .open-btn:hover{background:var(--c2);color:#fff}
+.c3-card .open-btn{background:rgba(232,130,10,.08);border-color:rgba(232,130,10,.28);color:var(--c3)}.c3-card .open-btn:hover{background:var(--c3);color:#0d0b05}
+.c4-card .open-btn{background:rgba(255,208,96,.08);border-color:rgba(255,208,96,.28);color:var(--c4)}.c4-card .open-btn:hover{background:var(--c4);color:#0e0c04}
+.rec-banner{position:absolute;top:16px;right:-28px;font-family:var(--font-ui);font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:6px 40px;transform:rotate(45deg);z-index:5}
+.c3-card .rec-banner{background:var(--c3);color:var(--bg)}.c4-card .rec-banner{background:var(--c4);color:var(--bg)}
+
+/* COMPARE */
+#compare{margin:0 52px 72px;border:1px solid rgba(255,255,255,.055);overflow:hidden}
+.cmp-head-row{padding:24px 32px;background:rgba(255,255,255,.018);border-bottom:1px solid rgba(255,255,255,.055);display:flex;align-items:center;justify-content:space-between}
+.cmp-title{font-family:var(--font-hero);font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.cmp-grid{display:grid;grid-template-columns:160px repeat(4,1fr)}
+.ch{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);font-family:var(--font-ui);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.ch:last-child{border-right:none}
+.ch1{color:rgba(198,255,0,.75)}.ch2{color:rgba(123,46,255,.85)}.ch3{color:rgba(232,130,10,.85)}.ch4{color:rgba(255,208,96,.85)}
+.cr{display:contents}
+.cl{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.035);border-right:1px solid rgba(255,255,255,.035);font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);display:flex;align-items:center}
+.cv{padding:14px 20px;border-bottom:1px solid rgba(255,255,255,.035);border-right:1px solid rgba(255,255,255,.035);font-size:12px;color:rgba(255,255,255,.45);line-height:1.4;display:flex;align-items:center}
+.cv:last-child{border-right:none}
+.yes{color:var(--bright);font-family:var(--font-ui);font-weight:800;font-size:11px}.no{color:rgba(255,255,255,.18);font-family:var(--font-ui);font-weight:700;font-size:11px}
+.cr:last-child .cl,.cr:last-child .cv{border-bottom:none}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.05);padding:36px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.foot-agency{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.18)}
+.foot-agency strong{color:var(--amber)}
+.foot-note{font-size:11px;color:rgba(255,255,255,.14);text-align:center;max-width:380px;line-height:1.6}
+.foot-contact{font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.18);text-align:right}
+.foot-contact a{color:var(--amber);transition:color .2s}
+
+.rev{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rev.in{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+@media(max-width:1024px){header{padding:22px 24px}#intro{padding:52px 24px 36px}.count-bar{margin:36px 24px 0;flex-wrap:wrap}.ci{min-width:50%;border-bottom:1px solid rgba(255,255,255,.06)}#concepts{padding:40px 24px 56px}.card{grid-template-columns:1fr}.card-preview{min-height:240px}#compare{margin:0 24px 56px}.cmp-grid{grid-template-columns:100px repeat(4,1fr)}footer{padding:28px 24px}}
+@media(max-width:640px){.count-bar{flex-direction:column}.ci{border-right:none;min-width:100%}.cmp-grid{grid-template-columns:70px repeat(4,1fr)}.ch,.cl,.cv{padding:10px 7px;font-size:9px}footer{flex-direction:column;text-align:center}.foot-contact{text-align:center}}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="crng"></div>
+
+<header>
+  <div class="agency">
+    <div class="agency-mark">RD</div>
+    <div class="agency-name">Roots Digital Media<span>Design Concepts Presentation</span></div>
+  </div>
+  <div class="header-date" id="hdate"></div>
+</header>
+
+<section id="intro">
+  <div class="intro-glow"></div>
+  <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/dWxBrgpor9CnOkVZ/bird-favicon-d957aq4RXLF4bkXR.png" alt="Road Runner" class="client-bird"/>
+  <div class="for-label">Website Redesign Proposal For</div>
+  <h1 class="client-name">RUNNIN'<br/><em>MERCH CO.</em></h1>
+  <p class="pres-sub">4 Creative Directions — Select Your Vision</p>
+</section>
+
+<div class="count-bar">
+  <div class="ci ci1 rev"><div class="ci-n">01</div><div class="ci-l">Direction One<span>Acid Retro</span></div></div>
+  <div class="ci ci2 rev rd1"><div class="ci-n">02</div><div class="ci-l">Direction Two<span>Neon Performance</span></div></div>
+  <div class="ci ci3 rev rd2"><div class="ci-n">03</div><div class="ci-l">Direction Three<span>Whiskey Vinyl</span></div></div>
+  <div class="ci ci4 rev rd3"><div class="ci-n">04</div><div class="ci-l">Direction Four<span>Whiskey Vinyl v5 <span class="new-badge">NEW</span></span></div></div>
+</div>
+
+<section id="concepts">
+
+  <!-- 01 ACID RETRO -->
+  <div class="card c1-card rev">
+    <div class="card-ghost" aria-hidden="true">01</div>
+    <div class="card-info">
+      <div>
+        <span class="card-tag">Direction 01</span>
+        <h2 class="card-title">ACID<br/>RETRO</h2>
+        <p class="card-tagline">Underground · Gritty · Cultural · Rebellious</p>
+        <p class="card-desc">Concert poster maximalism. Toxic lime on washed black. Oversized type bleeding off screen. Sticker-slapped UI, grain textures, marquee chaos. Feels like a flyer handed outside a venue.</p>
+        <div class="vibes"><span class="vibe">Toxic Lime</span><span class="vibe">Grain Texture</span><span class="vibe">Poster Chaos</span><span class="vibe">Glitch Effects</span></div>
+        <p class="card-best-label">Best For</p>
+        <p class="card-best">Indie artists, skate & streetwear brands, underground creators, cultural edge positioning</p>
+      </div>
+      <a href="v2-acid-retro.html" class="demo-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="card-preview">
+      <div class="browser-bar"><div class="bd bd-r"></div><div class="bd bd-y"></div><div class="bd bd-g"></div><div class="browser-url">roots-digital-media-clients/runninmerch/acid-retro</div></div>
+      <div class="preview-body"><div class="preview-big-text">ACID<br/>RETRO</div><div class="preview-lbl">Toxic Lime / Washed Black</div></div>
+      <a href="v2-acid-retro.html" class="open-btn" target="_blank">↗ OPEN DEMO</a>
+    </div>
+  </div>
+
+  <!-- 02 NEON PERFORMANCE -->
+  <div class="card c2-card rev">
+    <div class="card-ghost" aria-hidden="true">02</div>
+    <div class="card-info">
+      <div>
+        <span class="card-tag">Direction 02</span>
+        <h2 class="card-title">NEON<br/>PERFORMANCE</h2>
+        <p class="card-tagline">Cinematic · Premium · Futuristic · Stadium Energy</p>
+        <p class="card-desc">Electric purple meets stadium lights. Sweeping light cones, glowing buttons, animated counters, cinematic depth. Feels like stepping backstage at a major tour.</p>
+        <div class="vibes"><span class="vibe">Electric Purple</span><span class="vibe">Stage Lights</span><span class="vibe">Glow Effects</span><span class="vibe">Live Metrics</span></div>
+        <p class="card-best-label">Best For</p>
+        <p class="card-best">Musicians with real budgets, athletes, brands wanting premium scale, nationally competitive positioning</p>
+      </div>
+      <a href="runninmerch-neon-performance.html" class="demo-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="card-preview">
+      <div class="browser-bar"><div class="bd bd-r"></div><div class="bd bd-y"></div><div class="bd bd-g"></div><div class="browser-url">roots-digital-media-clients/runninmerch/neon-performance</div></div>
+      <div class="preview-body"><div class="preview-big-text">NEON<br/>PERF.</div><div class="preview-lbl">Electric Purple / Deep Black</div></div>
+      <a href="runninmerch-neon-performance.html" class="open-btn" target="_blank">↗ OPEN DEMO</a>
+    </div>
+  </div>
+
+  <!-- 03 WHISKEY VINYL -->
+  <div class="card c3-card rev" style="overflow:hidden">
+    <div class="rec-banner">Preferred</div>
+    <div class="card-ghost" aria-hidden="true">03</div>
+    <div class="card-info">
+      <div>
+        <span class="card-tag">Direction 03 — ★ Client Preferred</span>
+        <h2 class="card-title">WHISKEY<br/>VINYL</h2>
+        <p class="card-tagline">1970s Rock · Bold · Loud · Warm · Authentic</p>
+        <p class="card-desc">Warm amber on deep ink black. Bold type that commands a room. Spinning vinyl records, halftone textures, tour poster energy. The Road Runner as brand identity — always moving, never stopping.</p>
+        <div class="vibes"><span class="vibe">Amber & Rust</span><span class="vibe">Bold Type</span><span class="vibe">Road Runner</span><span class="vibe">Vinyl Record</span></div>
+        <p class="card-best-label">Best For</p>
+        <p class="card-best">Bold personality brands, music & culture, authentic storytelling, regional pride, long-term identity</p>
+      </div>
+      <a href="whiskey-vinyl-v2-bold.html" class="demo-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="card-preview">
+      <div class="browser-bar"><div class="bd bd-r"></div><div class="bd bd-y"></div><div class="bd bd-g"></div><div class="browser-url">roots-digital-media-clients/runninmerch/whiskey-vinyl</div></div>
+      <div class="preview-body"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/dWxBrgpor9CnOkVZ/bird-favicon-d957aq4RXLF4bkXR.png" alt="" class="preview-bird"/><div class="preview-lbl">Amber / Deep Ink Black</div></div>
+      <a href="whiskey-vinyl-v2-bold.html" class="open-btn" target="_blank">↗ OPEN DEMO</a>
+    </div>
+  </div>
+
+  <!-- 04 WHISKEY VINYL V4 FINAL -->
+  <div class="card c4-card rev" style="overflow:hidden">
+    <div class="rec-banner">FINAL</div>
+    <div class="card-ghost" aria-hidden="true">04</div>
+    <div class="card-info">
+      <div>
+        <span class="card-tag">Direction 04 — ★ Final Version v5</span>
+        <h2 class="card-title">WHISKEY<br/>VINYL v5</h2>
+        <p class="card-tagline">Mural Hero · Dual Images · Portrait + Landscape</p>
+        <p class="card-desc">Same conversion-focused layout — now with dual hero images. Landscape mural on desktop and landscape phones. Portrait mural automatically on upright phones. Both images embedded, no loading issues. One file, works everywhere.</p>
+        <div class="vibes"><span class="vibe">Mural Hero</span><span class="vibe">Portrait Mode</span><span class="vibe">Landscape Mode</span><span class="vibe">Conversion CTAs</span><span class="vibe">Broad Audience</span></div>
+        <p class="card-best-label">What's New</p>
+        <p class="card-best">Dual hero images · Auto portrait/landscape switching · Both images embedded · Full Est. 2022 visible on mobile · No image loading issues</p>
+      </div>
+      <a href="whiskey-vinyl-v5.html" class="demo-btn" target="_blank"><span>VIEW LIVE DEMO →</span></a>
+    </div>
+    <div class="card-preview">
+      <div class="preview-road" style="background:url('running-merch-roadrunner-graffiti.png') center/cover no-repeat;opacity:.35"></div>
+      <div class="preview-road-overlay"></div>
+      <div class="browser-bar"><div class="bd bd-r"></div><div class="bd bd-y"></div><div class="bd bd-g"></div><div class="browser-url">roots-digital-media-clients/runninmerch/whiskey-vinyl-v4-final</div></div>
+      <div class="preview-body" style="position:relative;z-index:1">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop,q=95/dWxBrgpor9CnOkVZ/bird-favicon-d957aq4RXLF4bkXR.png" alt="" class="preview-bird" style="opacity:.4;filter:brightness(0) saturate(100%) invert(65%) sepia(90%) saturate(700%) hue-rotate(5deg) brightness(130%)"/>
+        <div class="preview-lbl">Mural · Amber · Conversion</div>
+      </div>
+      <a href="whiskey-vinyl-v5.html" class="open-btn" target="_blank">↗ OPEN DEMO</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- COMPARE -->
+<div id="compare" class="rev">
+  <div class="cmp-head-row"><div class="cmp-title">DIRECTION COMPARISON</div></div>
+  <div class="cmp-grid">
+    <div class="ch" style="color:rgba(255,255,255,.18)"></div>
+    <div class="ch ch1">Acid Retro</div>
+    <div class="ch ch2">Neon Perf.</div>
+    <div class="ch ch3">Whiskey Vinyl</div>
+    <div class="ch ch4">Whiskey v4 ★</div>
+    <div class="cr"><div class="cl">Personality</div><div class="cv">Underground</div><div class="cv">Premium</div><div class="cv">Bold / Loud</div><div class="cv" style="color:rgba(255,248,231,.8);font-weight:600">Bold + Convert</div></div>
+    <div class="cr"><div class="cl">Hero</div><div class="cv">Poster Type</div><div class="cv">Stage Lights</div><div class="cv">Amber + Ink</div><div class="cv" style="color:rgba(255,248,231,.8);font-weight:600">Graffiti Mural</div></div>
+    <div class="cr"><div class="cl">Uses Logo</div><div class="cv"><span class="no">✕</span></div><div class="cv"><span class="no">✕</span></div><div class="cv"><span class="yes">✓ Bird</span></div><div class="cv"><span class="yes">✓ Bird</span></div></div>
+    <div class="cr"><div class="cl">Audience</div><div class="cv">Artists</div><div class="cv">Major Brands</div><div class="cv">Culture First</div><div class="cv"><span class="yes">✓ Everyone</span></div></div>
+    <div class="cr"><div class="cl">Primary CTA</div><div class="cv">Start a Drop</div><div class="cv">Start a Drop</div><div class="cv">Start a Drop</div><div class="cv"><span class="yes">✓ Get a Quote</span></div></div>
+    <div class="cr"><div class="cl">Story Section</div><div class="cv"><span class="no">✕</span></div><div class="cv"><span class="no">✕</span></div><div class="cv"><span class="no">✕</span></div><div class="cv"><span class="yes">✓ Short + Real</span></div></div>
+    <div class="cr"><div class="cl">Conversion</div><div class="cv">Medium</div><div class="cv">Medium</div><div class="cv">Medium</div><div class="cv" style="color:rgba(255,208,96,.9);font-weight:700">★★ Highest</div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-agency">Prepared by <strong>Roots Digital Media</strong></div>
+  <div class="foot-note">Interactive design concepts — fully responsive. Select a direction and we move into development.</div>
+  <div class="foot-contact">Questions?<br/><a href="mailto:hello@rootsdigitalmedia.com">hello@rootsdigitalmedia.com</a></div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),crng=document.getElementById('crng');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;crng.style.left=rx+'px';crng.style.top=ry+'px';requestAnimationFrame(loop)})();
+const d=new Date();document.getElementById('hdate').textContent=d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.07});
+document.querySelectorAll('.rev').forEach(r=>obs.observe(r));
+document.querySelectorAll('.card,.demo-btn,.open-btn,.ci').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';crng.style.width='50px';crng.style.height='50px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';crng.style.width='36px';crng.style.height='36px'});
+});
+</script>
+</body>
+</html>
